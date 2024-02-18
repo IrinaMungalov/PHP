@@ -167,3 +167,37 @@ booking-php-image
      v
 
   CONTAINER
+
+
+
+
+
+## Syntax
+
+  - php tag <?php code ?>
+  - short tag <? code ?>
+  - pronting tag <?= code ?>
+  - flow tags
+    <? control: ?>
+      ...
+    <? endcontrol ?>
+  - instr1; instr2; ...
+  - print(), echo
+
+
+
+
+
+
+
+## Values
+
+string
+integer
+float
+boolean
+
+array
+object
+null
+resource

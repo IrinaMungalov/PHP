@@ -9,7 +9,7 @@
 <body>
 
     <h1>Contact Information</h1>
-    <?php    
+    <?    
     $city = "Houston";
     $street = "13 Travis Street";
     $phone = "+442086128000";
@@ -20,31 +20,31 @@
 
     <h2>You can find us at the following address:</h2>
     <p><b>City:</b>
-        <?php print $city; ?>
+        <?= $city; ?>
         <br>
         <b>Street:</b>
-        <?php print $street; ?>
+        <?= $street; ?>
     </p>
 
     <h3>Contact Details:</h3>
     <p><b>Phone Number:</b>
-        <?php print $phone; ?>
+        <?= $phone; ?>
         <br>
         <b>Email:</b>
-        <a href="<?php print $email; ?>">
-            <?php print $email; ?>
+        <a href="<?= $email; ?>">
+            <?= $email; ?>
         </a>
     </p>
 
     <h3>Business Hours:</h3>
     <p>
-        <?php print $businessHours; ?>
+        <?= $businessHours; ?>
     </p>
 
     <h3>Website:</h3>
     <p>
         <a href="index.php">
-            <?php print $website; ?>
+            <?= $website; ?>
         </a>
     </p>
 </body>
