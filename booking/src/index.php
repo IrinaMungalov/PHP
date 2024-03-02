@@ -1,42 +1,52 @@
-<!--  DATA BASE -->
+<!-- LOGIC -->
 <?
-  // HW2: MAKE page title and seat price - constans
-  //      confine to the naming conventions
+    const TICKET_PRICE = 100;
+    
+    if (array_key_exists('quantity', $_GET)) {
+        
+        $quantity = $_GET['quantity'];
 
-  // HW3: format the total cost
-  //      Total cost: 2 x 100.50 = 201.00
+        // HW1: make sure the value is INTEGER!!!
+        if (ctype_digit($quantity)) {
+            $cost = TICKET_PRICE * $quantity;
+            $total = $cost;
+        } else {
+            $error = "Error: Quantity must be an integer!";
+        }
+        
+    } else {
+        $error = "You didn't specify any quantity!";
+    }
 
-  define("PAGE_TITLE", "Booking confirmation");      // string
+// HINT: php function naming convention
+//       type_action_param
+//       type_param_action
 
-  define("SEAT_PRICE", 100.50);                      // float
-   
-  $book_client_vip = true;                           // boolean
-  $book_adults = 3;                                  // int
-  $book_cost = SEAT_PRICE * $book_adults;            // float   
 ?>
 
+<!-- TEMPLATE -->
+<a href="/?quantity=1">Buy 1 ticket</a><br>
+<a href="/?quantity=2">Buy 2 tickets</a><br>
+<a href="/?quantity=3">Buy 3 tickets</a><br>
+<hr>
+<form method="GET" action="/">
+    <input type="text" name="quantity" placeholder="enter desired value...">
+    <button>BUY</button>
+</form>
+<hr>
 
-<!-- TEMPLATE / VIEW -->
-<h1><?= PAGE_TITLE ?></h1>
-<p>Adults: <?= $book_adults ?></p>
-<p>Total cost: <?= $book_adults ?> x <?= number_format(SEAT_PRICE, 2) ?> = <?= number_format($book_cost, 2) ?></p>
-
-<? if ($book_client_vip == true): ?>
-  <p>VIP</p>
+<? if (isset($total)) : ?>
+    <div>
+        <?= $quantity ?> tickets x <?= TICKET_PRICE?> = <?= $total ?>
+    </div>
 <? endif ?>
+<? if (isset($error)) : ?>
+    <div style="color: red";>
+        <?= $error ?>
+    </div>
+<? endif ?>
+    
 
-<a href="contacts.php">Contacts</a>
 
-
-
-
-<!--
-
-  HW1: create the page contacts.php
-       declare 5-6 variables with contact data:
-        - city, street, phone, email, geo coords, ...
-
-       print the contact data - formatting it using ONLY HTML
-      
-
--->
+    
+   
