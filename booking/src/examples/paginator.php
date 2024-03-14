@@ -1,5 +1,14 @@
 <!-- LOGIC -->
 <?
+
+    $images = array (
+        './images/1.jpg',
+        './images/2.jpg',
+        './images/3.jpg',
+        './images/4.jpg',
+        './images/5.jpg',
+    );   
+
     $max_p = 5;
 
     if (isset($_GET['p'])) {
@@ -21,11 +30,33 @@
 <!-- TEMPLATE -->
 <style>
     body { background-color: #222; color: white; text-align: center;}
-    a { color: #ccc; text-decoration: none;}
+    .container { display: flex; align-items: center; justify-content: center; }
+    a { color: #ccc; text-decoration: none; padding: 5px;}
     /* span a:nth-child(<?=$page ?>) {text-decoration: underline;} */
     a.active { text-decoration: underline; }
     .hidden { display: none; }
+    
 </style>
+
+<div class="container">
+    <a href="?p= <?= $prev_page ?>" 
+        <? if ($page == 1)
+            print 'class="hidden"'    
+        ?>
+    >◀</a>
+
+    <img 
+        src="<?= $images[$page - 1] ?>" 
+        alt="Image <?= $page ?>"
+    >
+
+    <a href="?p= <?= $next_page ?>"
+        <? if ($page == $max_p)
+            print 'class="hidden"'
+        ?>
+    >▶</a>  
+
+</div>
 
 <div>
     You are on page <?=$page ?>
@@ -39,6 +70,8 @@
         <a href="?p=4">4</a>
         <a href="?p=5">5</a>
     </span> -->
+
+
 
     <a href="?p= <?= $prev_page ?>"
         <? if ($page == 1)
@@ -58,6 +91,7 @@
         <? if ($page == $max_p)
             print 'class="hidden"'
         ?>
-    >&gt;</a>
+    >&gt;</a>    
 
 </div>
+
