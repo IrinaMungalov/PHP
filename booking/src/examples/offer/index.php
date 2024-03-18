@@ -36,6 +36,7 @@
 </style>
 
 <div class="container">
+    <h2>Sorting: </h2>
     <a href="?sort=asc">▲</a> 
     <a href="?sort=desc">▼</a>
 </div>
