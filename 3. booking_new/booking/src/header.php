@@ -8,6 +8,11 @@
         >support</a>
 
         <a 
+            href="/?page=tours"
+                <? if ($page == 'tours') { ?>class="active" <? } ?>
+        >[Tour Catalog]</a>
+
+        <a 
             href="/?page=contacts"
                 <? if ($page == 'contacts') { ?>class="active"<? } ?>
         >contacts</a>

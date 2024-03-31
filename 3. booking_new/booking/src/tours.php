@@ -1,37 +1,31 @@
 <?
-    include 'data.php';
+    require 'data.php';
 ?>
 <section>
     <h1>List of Tours:</h1>
     <ol>
-        <? 
-            $tourCount = count($tourData);
-
-            for ($i = 0; $i < $tourCount; $i++) {
-                $tour = $tourData[$i]
-        ?>
+        <? for ($i = 0; $i < count($tours); $i++) { ?>
             <li>
-                <h2>
-                    <?= $tour['name'] ?>
-                </h2>
-                <img src="<?= $tour['image'] ?>" width="200">
+                <h2><?= $tours[$i]['name'] ?></h2>
+                <img src="<?= $tours[$i]['image'] ?>" width="200">
                 <p>
                     <strong>Destination:</strong>
-                    <?= $tour['destination'] ?>
+                    <?= $tours[$i]['destination'] ?>
                 </p>
                 <p>
                     <strong>Duration:</strong>
-                    <?= $tour['duration'] ?> days
+                    <?= $tours[$i]['duration'] ?> days
                 </p>
                 <p>
-                    <strong>Price:</strong> €
-                    <?= $tour['price'] ?>
+                    <strong>Price:</strong>
+                    <?= $tours[$i]['price']['amount'] ?>
+                    <?= $tours[$i]['price']['currency'] ?>
 
-                    <? if ($tour['hot']) { ?> 
+                    <? if ($tours[$i]['hot']) { ?> 
                         <img src="<?= HOT_STICKER ?>" width="70">
                     <? } ?>
                 </p>
-                
+                <hr>
             </li>
         <? } ?>
     </ol>
