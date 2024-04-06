@@ -103,3 +103,39 @@ file
 + owner and others
 + write. read, execute (binary)
 + change mode
+
+
+
+
+
+
+
+
+
+# Text Data Formats:
+
+ - JSON
+ - XML
+ - YAML
+
+
+
+
+
+
+
+
+       req
+        |      webserver
+        v      /
+ +------------+----+
+ |                 |
+ |                 |
+ |     php mod     |<--------- script.php
+ |                 |
+ |                 +-- extensions
+ |                 |
+ +-----------------+
+         |
+         v
+        res
