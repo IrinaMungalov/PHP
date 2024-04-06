@@ -5,7 +5,7 @@
         $name = $_GET['name'];
         $email = $_GET['email'];
         $age = (int)$_GET['age'];               // HW2:  convert age to int                                  
-        $active = ($_GET['active'] === 'true'); // HW3: get active (true/false) - boolean
+        $active = isset($_GET['active']) ? ($_GET['active'] === 'true') : false; // HW3: get active (true/false) - boolean
 
         $client = [
             'name' => $name,
@@ -20,7 +20,6 @@
         $file = fopen("./data/client.json", "w");
         fwrite($file, json_encode($client));
         fclose($file);
-
     
 
 ?>
