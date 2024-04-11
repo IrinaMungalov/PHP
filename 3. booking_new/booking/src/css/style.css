@@ -15,8 +15,9 @@ nav a.active {
 
 form {
     border: 1px solid #666;
-    padding: 5px;    
+    padding: 5px;
 }
+
 button,input {
     padding: 10px;
 }
