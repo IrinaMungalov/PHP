@@ -10,7 +10,9 @@ if (isset($_POST['search'])) {
     });
 }
 
-/*if (isset($_POST['min_price']) && isset($_POST['max_price'])) {
+
+
+if (isset($_POST['min_price']) && $_POST['min_price'] != '' && isset($_POST['max_price']) && $_POST['max_price'] != '') {
 
     $min_price = (int) $_POST['min_price'];
     $max_price = (int) $_POST['max_price'];
@@ -18,7 +20,24 @@ if (isset($_POST['search'])) {
     $tours = array_filter($tours, function ($tour) use ($min_price, $max_price) {
         return $tour['price']['amount'] >= $min_price && $tour['price']['amount'] <= $max_price;
     });
-}*/
+
+} elseif (isset($_POST['min_price']) && $_POST['min_price'] != '') {
+    
+    $min_price = (int) $_POST['min_price'];
+    $tours = array_filter($tours, function ($tour) use ($min_price) {
+        return $tour['price']['amount'] >= $min_price;
+    });
+    
+} elseif (isset($_POST['max_price']) && $_POST['max_price'] != '') {
+    
+    $max_price = (int) $_POST['max_price'];
+    $tours = array_filter($tours, function ($tour) use ($max_price) {
+        return $tour['price']['amount'] <= $max_price;
+    });
+}
+
+
+
 
 if (isset($_POST['sort_desc'])) {
     usort($tours, function($tour_a, $tour_b){
