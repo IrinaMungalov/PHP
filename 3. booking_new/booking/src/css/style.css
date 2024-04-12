@@ -13,8 +13,7 @@ nav a.active {
     text-decoration: underline;
 }
 
-form {
-    border: 1px solid #666;
+form {    
     padding: 5px;
 }
 
