@@ -19,14 +19,14 @@
             break;
         }
     }
-type="hidden"
+
 */
 ?>
 
 <hr>
 <form action="/?page=order&id=<?= $id ?>" method="POST">
     <h2>You are about to book the tour '<?= $tourName ?>'</h2>
-    <input  name="tour_id" value="<?= $id ?>">  
+    <input type="hidden" name="tour_id" value="<?= $id ?>">  
 
     <label>
         <select name="quantity">
