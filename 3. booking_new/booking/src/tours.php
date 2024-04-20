@@ -105,6 +105,8 @@ $tours = array_values($tours);
                     <strong>Price:</strong>
                     <?= $tours[$i]['price']['amount'] ?>
                     <?= $tours[$i]['price']['currency'] ?>
+                    </br>
+                    <a href="/?page=book&id=<?= $tours[$i]['id'] ?>">BOOK</a>
                 </p>
                 <hr>
             </li>

@@ -28,7 +28,7 @@ index.php?page=contacts
 HW1:  
   data.php -> multi level array: tour data (data file)
 HW2:
-  tours.php -> loop + conditional + data + html 
+  tours.php -> loop + conditional + data + html (отобразить список этих туров 2-3)
 HW3:
   include tours.php -> home.php
 
