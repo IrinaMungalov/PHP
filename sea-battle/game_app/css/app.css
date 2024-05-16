@@ -1,0 +1,77 @@
+body {
+    background-color: #223;
+    color: white;
+    padding: 20px;
+}
+
+.map {    
+    width: 500px;
+    height: 500px;
+    border: 3px solid #444;      
+}
+
+.map .sq {
+    width: 48px;
+    height: 48px;
+    border: 1px solid #666;
+    float:left;
+    background-color: #223;
+}
+
+.map .ship {
+    background-color: #651;
+}
+
+.map .hit {
+    background-image: url(../i/hit.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.map .miss {
+    background-image: url(../i/miss.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.field {
+    display: flex;
+    align-items: flex-start;
+    gap: 5px;
+}
+
+.numbers {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;   
+    justify-content: center;
+    margin-top: 35px;
+}
+
+.number {
+    width: 24px;
+    height: 24px;
+    padding: 10px;
+    background: #444;
+    border: 1px solid #666;    
+    text-align: center;  
+}
+
+.letter-field {
+    display: flex;
+    flex-direction: column;    
+}
+
+.letters {
+    display: flex;
+    justify-content: space-between;    
+    margin-bottom: 5px;    
+}
+
+.letter {
+    text-align: center;
+    flex: 1;
+    background: #444;
+    border: 1px solid #666;
+    padding: 5px;    
+}
