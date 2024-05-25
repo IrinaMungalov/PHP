@@ -200,3 +200,152 @@ lib.php
 
 
 # HW1: register the shot ---> map state
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Sea Battle / matches
+
+ app
+  |
+  +--- match_1
+  |      |  
+  |      +- state
+  |      +- score
+  |      +- startedOn
+  |      +- endedOn
+  |      +- ...
+  |      |
+  |      +-- player_1
+  |      |       |
+  |      |       +- name
+  |      |       +- ...
+  |      |       |
+  |      |       +-- map_ship
+  |      |       +-- map_state
+  |      |
+  |      +-- player_2
+  |              |
+  |              +-- map_ship
+  |              +-- map_state
+  |
+  +--- match_2
+  +--- match_3
+  |
+  .
+  .
+  .
+  +--- match_N
+
+
+
+
+
+
+
+
+
+
+  ----- GET req /match.php -----> match.php --+
+                                              |
+  +---------- res HTML -----------------------+   
+  |
+  FORM 1 --- POST req /login-action.php ---> +
+                                               \
+                                                +--> login-action.php
+                                               /              |
+  FORM 2 --- POST req /login-action.php ---> +                | 
+                                                              |
+                                                              +-- $username <--- $_POST['username']
+                                                              +-- $username <--- $_POST['password']
+                                                              |
+                                                              +-- $users <---- load_users() < users.json
+                                                              |
+                                                              +--> user_exists($users,$username,$password)
+                                                              |                      |
+                                                              +-- $found <-----------+
+                                                              |
+                                                              |
+                                                              |
+                                                              v
+                                                            $found ? ------------------------------+
+                                                              |                                    |
+                                                            true                                  false 
+                                                              |                                    |
+                                                              v                                    v
+                                                                                        edirect(/match.php)    
+                                                                                                   |
+<----------------------------------- res ----------------------------------------------------------+
+                                [HHHH][]
+                                 ^
+                                 |
+                                header("Location: /match.php")
+
+
+
+
+
+
+
+
+
+
+
+
+-------- GET req /create-account.php -------+
+                                            |
++<----- res HTML ---------------------------+     
+|
+FORM (POST)
+ |
+ +-- username
+ +-- password
+ +-- password_confirm
+
+ +------ POST req /register-action.php -----+
+                                            v
+                                          1. obtain form data
+                                            v                                      ^    
+                                          2. check password confirmation           |
+                                            |                                   redirect
+                                            v                                      |
+                                          $password != $password_confirm ? - true -+
+                                            |
+                                            v
+                                          false
+                                            |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+           FORM                ACTION
+         s----------e         s-------------e
+         |          v         |             v
+x--------x=========>x---------x======x======>------------------>   
+              ^          ^           |     
+              |         here         |                      
+              |                     redirect
+              |                      |
+              +----- ?message... ----+
+
+                url params / query string

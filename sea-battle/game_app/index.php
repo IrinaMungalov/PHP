@@ -16,22 +16,13 @@
 </head>
 <body>
     <div class="container">
-        <?= render_map($map_ship, $map_state) ?>
+        <table class="navbar">
+            <tr>
+                <td><h2>SEA BATTLE</h2></td>
+                <td><a href="/match.php">NEW MATCH</a></td>
+            </tr>
+        </table>
     </div>
 </body>
 </html>
 <? // save_map($map) ?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
