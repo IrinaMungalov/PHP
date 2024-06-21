@@ -18,6 +18,7 @@
   > properties / methods
   > access modifiers
   > magic methods
+  > encapsulation
 
   > inheritance
   > abstraction
@@ -107,3 +108,117 @@ HW1:
             renderAsHTML() -> return the HTML equivalent of the post
             renderAsXML()  -> return the XML equivalent of the post
             renderAsJSON() -> return the JSON equivalent of the post
+
+
+
+
+
+ ClassName
+   |
++--+-------------+
+|                |
+|  static        | --- new instance { ... } ---> non-static
+|                | --- new instance { ... } ---> non-static
+|                | --- new instance { ... } ---> non-static
+|                |
+|                |
++----------------+
+
+
+
+
+
+
+
+
+
+
+ClassName
+   |
++--+-----------------+                           custom
+|                    |                             |
+|                    |                             v
+|                    | --- new Style() ---> __constructor() ---> { ... }
+|                    |        |                    ^
+|                    |        +------- $this ------+
+|                    |
++----+---------------+
+     |
+    blueprint
+     |
+     v                                         ^
+    +---------------+                          |
+    |               |                          |
+    |  $background  |+-------------------------+
+    |  $color       |+-------------------------+
+    |  $padding     |+-------------------------+     
+    |               |
+    +----+----------+
+
+
+
+
+
+
+
+
+
+
+#style1->toCSS()
+   ^    {
+ $this ----->   
+        }
+
+
+
+#style2->toCSS()
+   ^    {
+ $this ----->   
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+HW1:
+    define class Profile
+                  |
+                  +-- name
+                  +-- avatar
+                  +-- ...
+
+    define a constructor  
+    define a toHTML()   
+
+    create a few profile objects and render them on the page  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# ENCAPSULATION
+
+
+ > access modifier
+ > get/set
+
