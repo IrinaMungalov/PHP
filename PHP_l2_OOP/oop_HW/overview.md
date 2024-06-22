@@ -237,7 +237,38 @@ HW1:
 
 
 
-HW2: in Length class, add encapsulation for "value" allow only >= 0
+$link->text = "..."
+        |                            |
+        +--------------- set value --------> __set($name, $value)
+                                     |                      |
+                                     |                      v
+print( $link1->text )                |            private $text
+                 ^                   |                      v
+                 |                   |                      |
+                 +------ get value --------  __get($name) --+
+                                     |
+                                     |
+                                     |       __toString()
+                                     |           |
+                    <- to string ----------------+
+                                     |
+
+
+
+
+HW2: implement __isset() so it returns true only if link has a non-empty text and non-empty url
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
