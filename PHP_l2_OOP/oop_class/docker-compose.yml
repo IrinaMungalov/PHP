@@ -1,0 +1,12 @@
+version: '3.8'
+
+
+services:
+  oop-app-container:
+    image: php:8.3-apache
+    restart: no
+    volumes:
+      - ./:/var/www/html/
+
+    ports:
+      - 8083:80
