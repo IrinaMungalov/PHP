@@ -5,6 +5,8 @@
         case MDL;
     }
     class Money {
+        const MIN_AMOUNT = 0;
+        const MAX_AMOUNT = 1_000_000;
         private int $amount;   #  x100 | 1.00$ -> 100
         private Currency $currency;
 
@@ -15,13 +17,9 @@
 
         # HW4: limit to the max and min of integer
         public function setAmount(int $amount): void {
-            $minAmount = 0;
-            $maxAmount = 1_000_000;
 
-            # $this->amount = clamp($amount, $minAmount, $maxAmount); -> PHP 8.0
-
-            if ($amount < $minAmount || $amount > $maxAmount) {
-                die("ERROR: The amount must be between $minAmount and $maxAmount!");
+            if ($amount < static::MIN_AMOUNT || $amount > static::MAX_AMOUNT) {
+                die("ERROR: The amount must be in range (".static::MIN_AMOUNT."...".static::MAX_AMOUNT.")\n");
             }            
                 $this->amount = $amount;
             }       
