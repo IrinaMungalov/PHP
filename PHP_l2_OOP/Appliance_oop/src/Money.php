@@ -28,9 +28,14 @@
         }
 
         # HW5: allow only EUR,USD,MDL
-        public function setCurrency(Currency $currency): void {            
-            $this->currency = $currency;
-        }
+        public function setCurrency(Currency $currency): void { 
+            $validCurrency = [Currency::EUR, Currency::USD, Currency::MDL];
+            
+            if (!in_array($currency, $validCurrency, true)) {
+                die("ERROR: Allowed currencies are: " . implode(', ', $validCurrency));
+            }
+                $this->currency = $currency;
+            }
         public function getCurrency(): Currency {
             return $this->currency;
         }
