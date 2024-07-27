@@ -554,7 +554,61 @@ increment           |   +--------------+
 
 
 
+ > namespace
 
+ index.php
+  ^
+  |
+  +--/ Length.php
+  |       |
+  |       +-- Length
+  |              |
+  |              +-- Units (enum)
+  |              +-- Length (class)
+  |
+  +--/ Volume.php
+          |
+          +-- Volume
+                 |
+                 +-- Units (enum)
+                 +-- Length (class)
+
+
+
+
+
+
+
+
+
+
+
+
+         order <Order>
+          |
+          |
+          +-- items <array>
+                |
+                +-- 0 - <Item>                +------------------ $tv
+                |           |                 v                    ^
+                |           +-- product  --> <Appliance>           |
+                |           +-- quantity --> <int>              changes
+                |
+                |
+                +-- 1 - ...
+        
+
+
+
+
+
+
+
+
+
+
+
+        
 
 
 

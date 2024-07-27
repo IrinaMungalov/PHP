@@ -43,7 +43,17 @@
 
         public function getName(): string {
             return $this->name;
-        }      
+        }    
+        
+        public function getPrice(): Money {
+            return $this->price;
+        }
+
+        public function setPrice(Money $price): void {
+            $this->price = $price;
+        }
+
+
 
 
     }
