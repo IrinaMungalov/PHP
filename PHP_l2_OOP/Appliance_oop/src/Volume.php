@@ -1,12 +1,12 @@
 <?
-    namespace Length;
+    namespace Volume;
     enum Units {
-        case INCH;
-        case FOOT;
-        case CM;
-        case M;
+        case LITER;
+        case MILLILITER;
+        case CV3;
     }
-    class Length {
+
+    class Volume {
         private int|float $value;
         private Units $unit;
 
@@ -14,5 +14,4 @@
             $this->value = $value;
             $this->unit = $unit;
         }
-        
     }
