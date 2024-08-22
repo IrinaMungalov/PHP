@@ -1,0 +1,19 @@
+{
+    "name": "student/booking",
+    "type": "project",
+    "license": "Custom",
+    "autoload": {
+        "psr-4": {
+            "Student\\Booking\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Irina M."
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "twig/twig": "4.x-dev"
+    }
+}
