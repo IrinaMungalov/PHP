@@ -1,11 +1,19 @@
 <?
-    function renderHome ($title, $tours) {
+    
+
+    // DRY render
+
+    function renderPage ($title, $template_name, $data='') {
         global $twig;
-        $template = $twig->load('home.html.twig');
+        $template = $twig->load($template_name.'.html.twig');
 
         print($template->render([
             'title' => $title,
-            'tours'=> $tours
+            'data'=> $data
         ]));
 
     }
+
+
+
+    
