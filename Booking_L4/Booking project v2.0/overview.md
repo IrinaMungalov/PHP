@@ -163,3 +163,33 @@ BROWSER <--- res (HTML) <--- twig render('home.html.twig') <--- data <--- mysqli
                                                       ^
                                                       |
                                                      PDO('localhost')
+
+
+
+
+
+
+
+  query parameter
+
+  ?page=...
+
+
+                        home
+                       +-----> renderHome(...)
+                      /
+index.php ---------> ?
+                      \ reviews
+                       +-----> renderReviews(...)
+                     ^
+                     |  404
+                     | -----> render404()
+                     |
+                   router
+
+
+
+                   OPTOMOZATIONS:
+                    - url: ?page=reviews -> /reviews (url rewrite) / webserver
+                    - DRY: model (php)
+                    - DRY: view (php)
