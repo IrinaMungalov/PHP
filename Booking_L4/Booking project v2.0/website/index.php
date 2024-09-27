@@ -1,26 +1,70 @@
 <?
+    
+
     require_once './src/bootstrap.php';
+
+    use \Student\Booking\models\Tour;
     
     $page = $_GET['page'] ?? 'home';
 
+    $tours = Tour::getAll();
+    var_dump($tours);
+
+
+
+
+
+
+
+
+
+
+
+
+
     
-    if ($page === 'home') {
 
-        $tours = getAllData('tours');
-        $title = 'Our Fall Tours';
-        renderPage($title, 'home', $tours);
+    // if ($page === 'home') {
 
-    } else if ($page === 'reviews') {
+    //     $tours = Tour::getAll();
+    //     $title = 'Our Fall Tours';
+    //     renderPage($title, 'home', $tours);
 
-        $reviews = getAllData('reviews');
-        $title = 'What people think';
-        renderPage($title, 'reviews', $reviews);
+    // } else if ($page === 'reviews') {
 
-    } else {
+    //     $reviews = getAllReviews();
+    //     $title = 'What people think';
+    //     renderPage($title, 'reviews', $reviews);
 
-        renderPage('THE PAGE YOUR ARE LOOKING FOR WAS NOT FOUND!', '404');
+    // } else if ($page === 'test') {
+        
+    //     $tour = new Tour(10,'Tour from ORM', 1000);
+    //     $tour->save();
 
-    }
+    // } else {
+
+    //     renderPage('THE PAGE YOUR ARE LOOKING FOR WAS NOT FOUND!', '404');
+
+    // }
+
+    
+    // if ($page === 'home') {
+
+    //     $tours = getAllData('tours');
+    //     $title = 'Our Fall Tours';
+    //     renderPage($title, 'home', $tours);
+
+    // } else if ($page === 'reviews') {
+
+    //     $reviews = getAllData('reviews');
+    //     $title = 'What people think';
+    //     renderPage($title, 'reviews', $reviews);
+
+    // } else {
+
+    //     renderPage('THE PAGE YOUR ARE LOOKING FOR WAS NOT FOUND!', '404');
+
+    // }
 
     // HW*: try to use switch/case
 
@@ -42,21 +86,3 @@
     //         break;
     // }
 
-    
-
-    
-    
-
-    
-
-    
-
-
-    
-
-    
-
-    
-
-    
-    
