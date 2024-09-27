@@ -193,3 +193,112 @@ index.php ---------> ?
                     - url: ?page=reviews -> /reviews (url rewrite) / webserver
                     - DRY: model (php)
                     - DRY: view (php)
+
+
+
+
+
+ORM (Object Relational Mapper) / ODM / OGM
+DDD (Domain / Entity (Model))
+
+
+
+
+       <app>                   <db>
+
+       Objects <--- map ---> DDL / DML
+
+
+
+
+
+
+
+
+
+
+
++------------------+
+|   ACTIVE RECORD  |
++------------------+
+  .
+  1. model class: Tour
+
+    1.1 properties (structure)
+    1.2 init
+    1.3 BREAD
+        |  |
+        |  +-- 1.3.A - save()
+        +----- 1.3.B - getAll()
+
+        dehydration
+  2. object ------> raw SQL 
+
+        hydration
+  3. object <------ raw results
+
+
+
+
+
+
+
+    // CLASS:
+    // - OOP:
+    //    - props + methods
+    //    - class/interface/inheritance/abstraction
+    //    - namespaces
+    //    - traits
+    //    - polymorphism
+    //    - encapsulation
+    //    - objects
+
+    //    - SOLID
+    //    - db: ORM, singleton, observer, active record
+    // - CRUD / BREAD
+
+
+  Model (bootstrap)
+  ^  |
+  |  +-- $pdo <----- new PDO(...)
+  |
+  +-- Tour
+  +-- Client
+  +-- Review
+
+
+
+
+
+
+
+   src \Student\Booking
+    |
+    +-- \models
+          |
+          +-- Model.php
+          |     |                                  src
+          |     +-- models                          v
+          |          Model class     -----> \Student\Booking\models\Model
+          |     
+          +-- Tour
+          +-- Client
+          .
+          .
+          .
+     
+
+
+
+
+\Student\Booking\ + ... custom classes
+    ^                     |
+    |                   models
+   src/                   |
+                        Model
+
+                            ...
+                            \PDO
+                            ...
+
+  
