@@ -1,7 +1,9 @@
 <? 
-    // initialozation  + configuration of main app parts
+
     require_once './vendor/autoload.php';
-    require_once './src/model.php';
+    // initialozation  + configuration of main app parts
+    use \Student\Booking\models\Model;
+    
     require_once './src/view.php';
 
     // TWIG INIT + CONFIG
@@ -11,4 +13,4 @@
     ]);
 
     // DB INIT + CONFIG
-    $pdo = new PDO("mysql:host=booking_mariadb;dbname=booking;port=3306", "booking", "booking");
+    Model::$pdo = new PDO("mysql:host=booking_mariadb;dbname=booking;port=3306", "booking", "booking");
