@@ -4,11 +4,18 @@
     require_once './src/bootstrap.php';
 
     use \Student\Booking\models\Tour;
+    use \Student\Booking\models\Money;
     
     $page = $_GET['page'] ?? 'home';
 
-    $tours = Tour::getAll();
-    var_dump($tours);
+    
+
+    $tour = new Tour('Tour from ORM', new Money(1000,'USD',2), 10);
+    $tour->save();
+    // $price->save();
+
+    // $tours = Tour::getAll();
+    // var_dump($tours);
 
 
 
