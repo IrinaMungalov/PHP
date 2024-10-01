@@ -301,4 +301,33 @@ DDD (Domain / Entity (Model))
                             \PDO
                             ...
 
+
+
+
+
+
+
+
+
+
+
+------------------ OOP --------------------
+
+obj<Tour>
+  |
+  +-- id: int
+  +-- title: string
+  +-- price: Money
+        |
+        +-- amount
+        +-- currency
+
+
+
+------------------ DB ---------------------
+
+tours:               money:
+  id           +->    id
+  title        |      amount
+  price_id ----+      currency
   
