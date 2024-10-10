@@ -5,13 +5,21 @@
 
     use \Student\Booking\models\Tour;
     use \Student\Booking\models\Money;
+    use \Student\Booking\models\Client;
+    use \Student\Booking\models\Order;
+    use \Student\Booking\models\OrderItem;
     
     $page = $_GET['page'] ?? 'home';
-
     
+    $client = new Client('John Doe4', '', '+1234567', 04);
+    $cost = new Money(400, 'EUR',4040);
+    $order = new Order($client,$cost,444);
+    $order->save();
+    // $client = new Client('Pete Jackson2', '', '+1234567', 00000);
+    // $cost = new Money(11000, 'EUR',900000);
 
-    $tour = new Tour('Tour from ORM', new Money(1000,'USD',2), 10);
-    $tour->save();
+    // $order = new Order($client, $cost, 19000);
+    // $order->save();
     // $price->save();
 
     // $tours = Tour::getAll();

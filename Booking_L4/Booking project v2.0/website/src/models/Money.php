@@ -20,5 +20,14 @@
         }
 
         // HW5!!!: add getOne() here
+        public static function getOne(int $id) {
+            $stmt = static::$pdo->prepare('SELECT * FROM money WHERE id = ?');
+            $stmt->execute([$id]);
+
+            $stmt->setFetchMode(\PDO::FETCH_CLASS | \PDO::FETCH_PROPS_LATE, __CLASS__);
+            $money = $stmt->fetch();
+        
+            return $money;
+        }
        
     }
