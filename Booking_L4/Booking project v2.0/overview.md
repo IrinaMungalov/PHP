@@ -331,3 +331,44 @@ tours:               money:
   title        |      amount
   price_id ----+      currency
   
+
+
+
+
+
+
+
+
+Tour
+  |
+  +-- id
+  +-- title
+  +-- price_id (Money)
+                  |
+                  +-- id
+                  +-- amount
+                  +-- currency
+
+
+
+
+Order
+  |
+  +-- id
+  +-- state (draft, booked, completed, canceled)
+  +-- cost_id (Money)
+  +-- client_id (Client)
+  |                |
+  |                +-- id
+  |                +-- fullName
+  |                +-- contactEmail
+  |                +-- contactPhone
+  |
+  +-- items (OrderItem[])
+                |
+                |
+                +-- id
+                +-- order_id (Order)
+                +-- tour_id (Tour)
+                +-- touristCount
+                +-- cost_id (Money)
