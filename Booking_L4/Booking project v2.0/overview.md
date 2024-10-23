@@ -372,3 +372,36 @@ Order
                 +-- tour_id (Tour)
                 +-- touristCount
                 +-- cost_id (Money)
+
+
+
+
+
+
+
+
+
+
+
+
+# BOOKING / routing / DP: Strategy
+
+
+
+
+
+                                                  +-----> /         <--- /
+                                                 /
+client -----> req ( .../admin-tours... ) ----> Route ---> /contacts <--- /contacts
+                                                 \
+                                                  +-----> /about    <--- /about
+                                                   \
+                                                   RouterParam
+                                                    +---> /tour{????} <--- /tour/1, /tour/2 ...
+
+0. simple route
+   /contacts
+1. simple param routing
+   /tour/{id}
+2. regex expression routing
+   /search/{phrase: /[a-b0-9\-_]/}
